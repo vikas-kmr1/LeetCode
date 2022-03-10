@@ -1,23 +1,36 @@
-# iterative solution using while loop
-
-
-# Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution:
-    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        current = head
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        ListNode current = head;
         
-    
-        while current:
-            if current.next: 
-                current.val , current.next.val = current.next.val ,  current.val
-                current = current.next.next
-            else:
-                current = current.next
+        while(current != null)
+        {
+            if(current.next != null)
+            {
+                int temp = current.val;
+                current.val = current.next.val;
+                current.next.val = temp; 
+                current = current.next.next;
+            }
+            else{
+                current = current.next;
+            }
             
-                
-        return head
+        }
         
+        return head;
+        
+        
+        
+        
+    }
+}
