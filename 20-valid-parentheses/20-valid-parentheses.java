@@ -9,13 +9,14 @@ class Solution {
         
         for(int i=0; i< s.length(); i++)
         {
-            if ( s.charAt(i) == '(' || s.charAt(i) == '{' || s.charAt(i) == '[')
+            char c = s.charAt(i);
+            if ( c == '(' || c == '{' || c == '[')
             {
-                stack.push(s.charAt(i));
+                stack.push(c);
                 
             }
             
-            if (s.charAt(i) == ')'){
+            if (c == ')'){
                 if( !stack.empty() && stack.peek() == '(' ){
                     stack.pop();
                 }
@@ -24,7 +25,7 @@ class Solution {
                 }
             }
             
-            if (s.charAt(i) == ']'){
+            if (c == ']'){
                 if( !stack.empty() && stack.peek() == '[' ){
                     stack.pop();
                 }
@@ -33,7 +34,7 @@ class Solution {
                 }
             }
             
-            if (s.charAt(i) == '}'){
+            if (c == '}'){
                 if( !stack.empty() && stack.peek() == '{'){
                     stack.pop();
                 }
