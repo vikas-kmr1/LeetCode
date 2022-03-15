@@ -5,7 +5,7 @@ class Solution:
         k = 0 
         for i in min(strs):    
             for j in range(len(strs)):
-                print(strs[j][k])
+        
                 if strs[j][k] != i:
                     return prefix
             k+=1
