@@ -13,7 +13,7 @@ class Solution {
             if ( c == '(' || c == '{' || c == '[')
             {
                 stack.push(c);
-                continue;
+                
                 
             }
             
