@@ -1,28 +1,48 @@
-def getRev(x,res):
-
-    if x>0:
-        res = (res * 10) + (x%10)
-        return getRev(x//10 , res )
+class Solution {
+     final static int range = Integer.MAX_VALUE;
     
-    if (res >= (2**31) - 1) or (res <= (2**31) * -1):
-        return 0
+    public int reverse(int x) {
+        
+        if ((x >= range -1) || (x <= range * -1))
+            return 0;
+        
+        else{
+            System.out.println(x);
+            int sign = 1;
+            if (x <0)
+            {
+                sign = -1;
+                x = x * (-1);
+            }
+            
+            return getRev(x,0) * sign;
+            
+        }
+        
     
-    else:return res
-
-
-class Solution:
-    def reverse(self, x: int) -> int:
         
-        if (x > (2**31) - 1) or (x < (2**31) * -1):
-            return 0
         
-        else:    
-            signMultiplier = 1
-            if x < 0:
-                signMultiplier = -1
-                x = x * -1
+    }
+    
+    public static int getRev(int x,long res)
+    {
+        if (x>0)
+        {
+            res = (res*10) + (x%10);
             
-            revNum = getRev(x,0)
+              if ((res >= range -1) || (res <= range * -1)){
+              return 0;
+        }
             
-            return signMultiplier * revNum
+            return getRev(x/10, res);
+        }
+    
+      
         
+        else{
+            return (int)res;   
+        }
+        
+        
+    }
+}
