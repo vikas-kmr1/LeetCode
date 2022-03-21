@@ -7,7 +7,7 @@ class Solution {
             return 0;
         
         else{
-            System.out.println(x);
+          
             int sign = 1;
             if (x <0)
             {
