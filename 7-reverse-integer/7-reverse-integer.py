@@ -8,6 +8,7 @@ def getRev(x,res):
 #         return 0
     
 #     else:return res
+
     while x>0:
         res = (res * 10) + (x%10)
         if (res >= (2**31) - 1) or (res <= (2**31) * -1):
