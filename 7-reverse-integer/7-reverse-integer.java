@@ -26,23 +26,17 @@ class Solution {
     
     public static int getRev(int x,long res)
     {
-        if (x>0)
+        while (x>0)
         {
             res = (res*10) + (x%10);
             
               if ((res >= range -1) || (res <= range * -1)){
               return 0;
-        }
-            
-            return getRev(x/10, res);
-        }
-    
-      
-        
-        else{
-            return (int)res;   
-        }
-        
+              }
+            x = x/10  ; 
+        }   
+        return (int) res;
+     
         
     }
 }
