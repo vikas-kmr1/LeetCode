@@ -10,7 +10,6 @@ class Solution:
             if digits[i] == 9:
                 digits[i] = 0
                 
-    
         if digits[0] == 0:
             digits = [1] + digits
         return digits
