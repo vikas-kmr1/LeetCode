@@ -15,11 +15,6 @@ class Solution:
         return digits
             
                 
-                
-                
-    
-
-        
         
         # Brute-Force
 #         num = 0
