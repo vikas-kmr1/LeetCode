@@ -2,15 +2,15 @@
 
 <p>&nbsp;</p>
 <p><strong>Example 1:</strong></p>
-<pre><strong>Input:</strong> s = "leetcode"
+<pre style="position: relative;"><strong>Input:</strong> s = "leetcode"
 <strong>Output:</strong> 0
-</pre><p><strong>Example 2:</strong></p>
-<pre><strong>Input:</strong> s = "loveleetcode"
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre><p><strong>Example 2:</strong></p>
+<pre style="position: relative;"><strong>Input:</strong> s = "loveleetcode"
 <strong>Output:</strong> 2
-</pre><p><strong>Example 3:</strong></p>
-<pre><strong>Input:</strong> s = "aabb"
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre><p><strong>Example 3:</strong></p>
+<pre style="position: relative;"><strong>Input:</strong> s = "aabb"
 <strong>Output:</strong> -1
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
