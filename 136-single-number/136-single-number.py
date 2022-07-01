@@ -1,6 +1,14 @@
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        for i in nums:
-            if(nums.count(i) == 1):
-                return i
+        while(len(nums)>0):
+            j = nums[0]
+            s = nums.count(j)
+            
+            if s == 1:
+                return j
+            else:
+                
+                for i in range(s):
+                    nums.remove(j)
+            
         
