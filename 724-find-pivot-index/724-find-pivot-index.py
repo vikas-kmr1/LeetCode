@@ -8,6 +8,4 @@ class Solution:
                 return i
             sumL += nums[i]
         return -1
-                
-        return -1
-        
+  
