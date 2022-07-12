@@ -4,10 +4,14 @@ class Solution:
 
         sumL = 0
         sumR = sum(nums)
+        
         for i in range(len(nums)):
             sumR -= nums[i]
-            if sumL == sumR:
+            
+            if sumR == sumL:
                 return i
+            
             sumL += nums[i]
+            
         return -1
         
