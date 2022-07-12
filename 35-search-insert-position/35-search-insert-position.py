@@ -9,13 +9,12 @@ class Solution:
         if s>e:
             return s
         else:
-            mid = (s+e)//2
-            if val==a[mid]:
-                return mid
-            elif val>a[mid]:
-                return self.search(a, mid+1, e, val)
+            if val==a[(s+e)//2]:
+                return (s+e)//2
+            elif val>a[(s+e)//2]:
+                return self.search(a, (s+e)//2+1, e, val)
             else:
-                return self.search(a, s, mid-1, val)
+                return self.search(a, s, (s+e)//2-1, val)
         
         
         
