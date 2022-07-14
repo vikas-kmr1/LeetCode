@@ -1,14 +1,20 @@
 class Solution:
-    def peakIndexInMountainArray(self, A: List[int]):
-        lo, hi = 0, len(A) - 1
-        while lo < hi:
-            mi = (lo + hi)//2
-            if A[mi] < A[mi + 1]:
-                lo = mi + 1
-            else:
-                hi = mi
-        return lo
+    def peakIndexInMountainArray(self, arr: List[int]):
+        return arr.index(max(arr))
 
+        #return self.BinaryPeak(arr,0,len(arr)-1)
+    
+# recursice approach    
+#     def BinaryPeak(self,ar, s,e):
+        
+#         if s>=e:
+#             return s
+        
+#         elif ar[(s+e)//2] > ar[(s+e)//2 + 1]:
+#             return self.BinaryPeak(ar,s,(s+e)//2)
+#         else:
+#             return self.BinaryPeak(ar,(s+e)//2+1,e)
+        
     
     
         
