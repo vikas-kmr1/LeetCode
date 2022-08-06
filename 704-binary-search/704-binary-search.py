@@ -3,10 +3,10 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         
+        # recusrive 
         def binarySrch(nums,target,left,right):
             if left > right:
                 return -1
-            
             pivot = left+(right -left)//2
             if nums[pivot] == target:
                 return pivot
