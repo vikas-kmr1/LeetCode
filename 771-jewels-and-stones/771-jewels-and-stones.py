@@ -1,11 +1,22 @@
 class Solution:
     def numJewelsInStones(self, jewels: str, stones: str) -> int:
-        dict = {}
-        for x in jewels:
-            dict[x] = 0
+        store =  dict()
+        
+        for stone in stones:
+            if stone in store:
+                store[stone] += 1
+            else:
+                store[stone] = 1
+        
+       
+        
+        count_stone = 0
+        
+        for tStone in jewels:
+            if tStone in store:
+                count_stone += store[tStone]
+                
+        return count_stone
             
-        count = 0
-        for x in stones:
-            if x in dict:
-                count += 1
-        return count
+                
+        
