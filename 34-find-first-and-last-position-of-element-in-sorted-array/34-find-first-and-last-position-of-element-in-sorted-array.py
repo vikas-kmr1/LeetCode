@@ -10,9 +10,11 @@ class Solution:
                 if nums[mid] == target:
                     a = mid
                     if firstFound:
-                        high = mid -1
-                    else:
                         low = mid+1
+                        
+                    else:
+                        high = mid - 1
+                        
                 elif nums[mid] > target:
                     high  = mid -1
                 else:
@@ -23,9 +25,9 @@ class Solution:
         
         
         ans = [-1,-1]
-        ans[0] = binarySearch(True)
+        ans[0] = binarySearch(False)
         
-        ans[1] = binarySearch(False)
+        ans[1] = binarySearch(True)
         
         return ans
     
