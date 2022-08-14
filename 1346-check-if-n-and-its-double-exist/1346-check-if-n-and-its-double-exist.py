@@ -19,6 +19,7 @@ class Solution:
         
         for i in range(len(arr) - 1):
             if arr[i] >= 0:
+                
                 if binarySearch(arr[i+1:], arr[i]*2):
                     return True
             else:
