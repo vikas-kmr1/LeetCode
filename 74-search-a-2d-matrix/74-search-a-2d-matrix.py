@@ -6,6 +6,7 @@ class Solution:
             return False
         n = len(matrix)
         m = len(matrix[0])
+        
         low = 0
         high = (m*n)-1
         
