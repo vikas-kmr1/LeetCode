@@ -3,6 +3,7 @@ class Solution:
         
       
         s=s.lower()
+        s=s.replace(" ","")
         i = 0
         j = len(s)-1
      
