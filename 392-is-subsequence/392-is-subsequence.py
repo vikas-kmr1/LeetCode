@@ -4,6 +4,9 @@ class Solution:
         if len(s) == 0:
             return True
         
+        if len(t) == 0 or len(s) > len(t):
+            return False
+        
         i,j = 0,0
         while i<len(s) and j <len(t):
             if s[i] == t[j]:
