@@ -3,7 +3,7 @@ class Solution:
         
         arr_temp = nums[:]
         nums.sort()
-        val_table = {nums[0]:0}
+        val_table = {}
     
         for i,n in enumerate(nums):
             if n not in val_table:
