@@ -5,6 +5,7 @@ class Solution:
             lst.extend([i]*arr1.count(i))
             for j in range(arr1.count(i)):
                 arr1.remove(i)
+                
         arr1.sort()
         return lst+arr1
             
