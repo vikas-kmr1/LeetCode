@@ -6,22 +6,29 @@
 #         self.right = right
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        
+        # if root not exist return 
         if not root:
             return []
         
         
-        ans = []
+        #using BFS
+        
+        ans = [] #(list of lists storing ) level order lists 
         queue  = collections.deque()
-        queue.append(root)
+        queue.append(root) # pushing root or source node in the queue
     
+    
+        # run untill queue is not empty
         while queue:
+            
             lst = []
-            
-            
             
             queue_size = len(queue)
             
             lst = []
+            # run for each node in the queue
+            
             for _ in range(queue_size):
                 node = queue.popleft()
                 
@@ -32,8 +39,11 @@ class Solution:
                 
                 if node.right:
                     queue.append(node.right)
-            
+
+            #adding the level ordered list
             ans.append(lst)
+            
+            #reinitialize an empty list
             lst = []
                     
         return ans
