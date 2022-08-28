@@ -43,8 +43,7 @@ class Solution:
             #adding the level ordered list
             ans.append(lst)
             
-            #reinitialize an empty list
-            lst = []
+            
                     
         return ans
             
