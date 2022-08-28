@@ -41,7 +41,8 @@ class Solution:
                     queue.append(node.right)
 
             #adding the level ordered list
-            ans.append(lst)
+            if lst:
+                ans.append(lst)
             
             
                     
