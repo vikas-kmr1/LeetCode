@@ -10,4 +10,4 @@ on
 group by 
     U.account
 having 
-    sum(T.amount) >= 10000;
+    balance >= 10000;
