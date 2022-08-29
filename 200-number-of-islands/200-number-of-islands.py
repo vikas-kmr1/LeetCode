@@ -22,6 +22,7 @@ class Solution:
                 if grid[row][column] == '1':
                     dfs(grid,row,column)
                     no_of_islands += 1
-        
+                
+                    
         return no_of_islands
         
