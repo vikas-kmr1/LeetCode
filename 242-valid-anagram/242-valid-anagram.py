@@ -1,9 +1,13 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        hash_map_s = Counter(s)
+        hash_map_t = Counter(t)
         
-        if sorted(s) == sorted(t):
+        if hash_map_s == hash_map_t:
             return True
+        
         return False
+        
         
         
         
