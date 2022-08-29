@@ -7,28 +7,28 @@
 <p>&nbsp;</p>
 <p><strong>Example 1:</strong></p>
 
-<pre><strong>Input:</strong> nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+<pre style="position: relative;"><strong>Input:</strong> nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
 <strong>Output:</strong> [1,2,2,3,5,6]
 <strong>Explanation:</strong> The arrays we are merging are [1,2,3] and [2,5,6].
 The result of the merge is [<u>1</u>,<u>2</u>,2,<u>3</u>,5,6] with the underlined elements coming from nums1.
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><strong>Example 2:</strong></p>
 
-<pre><strong>Input:</strong> nums1 = [1], m = 1, nums2 = [], n = 0
+<pre style="position: relative;"><strong>Input:</strong> nums1 = [1], m = 1, nums2 = [], n = 0
 <strong>Output:</strong> [1]
 <strong>Explanation:</strong> The arrays we are merging are [1] and [].
 The result of the merge is [1].
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p><strong>Example 3:</strong></p>
 
-<pre><strong>Input:</strong> nums1 = [0], m = 0, nums2 = [1], n = 1
+<pre style="position: relative;"><strong>Input:</strong> nums1 = [0], m = 0, nums2 = [1], n = 1
 <strong>Output:</strong> [1]
 <strong>Explanation:</strong> The arrays we are merging are [] and [1].
 The result of the merge is [1].
 Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
-</pre>
+<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
