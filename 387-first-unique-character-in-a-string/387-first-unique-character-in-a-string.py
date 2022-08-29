@@ -1,8 +1,8 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
-    
-        for i in s:
-            if s.count(i)==1:
-                return s.index(i)
-                              
+        hash_map = collections.Counter(s)
+        
+        for i in range(len(s)):
+            if hash_map.get(s[i]) == 1:
+                return i
         return -1
