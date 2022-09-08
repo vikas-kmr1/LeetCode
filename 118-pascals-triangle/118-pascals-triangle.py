@@ -7,14 +7,16 @@ class Solution:
         if numRows==2:
             return P_tri[:2]
         if numRows>2:
-            for i in range(2,numRows):
-                P_tri.append([0]*(i+1))
-                P_tri[i][0]=P_tri[i][i]=1
-                
-                for j in range(1,i):
-                    P_tri[i][j]=P_tri[i-1][j-1]+P_tri[i-1][j]
-                    
-                    
+            for i in range(2,numRows): 
+                lst = []
+                for j in range(0,i+1):
+                    if j == 0 or j == i:
+                        lst.append(1)
+                    else:
+                        lst.append(P_tri[i-1][j-1]+P_tri[i-1][j])
+                        
+                if lst:
+                    P_tri.append(lst)
                     
         return P_tri
 
