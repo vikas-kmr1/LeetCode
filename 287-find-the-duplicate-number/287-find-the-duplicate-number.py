@@ -1,13 +1,14 @@
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
-        hash_map = Counter(nums)
-        
-        for i in set(nums):
-            if hash_map.get(i) >1:
-                return i
-            
-        
-        
-        
-        
-        
+        for num in nums:
+            cur = abs(num)
+            if nums[cur] < 0:
+                duplicate = cur
+                break
+            nums[cur] = -nums[cur]
+
+        # Restore numbers
+        for i in range(len(nums)):
+            nums[i] = abs(nums[i])
+
+        return duplicate
