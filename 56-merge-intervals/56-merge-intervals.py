@@ -4,10 +4,7 @@ class Solution:
         
         if len(intervals) <= 1:
             return intervals
-        
-    
-        
-        
+            
         intervals.sort()
         result  = []
         minX =intervals[0][0]
