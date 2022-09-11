@@ -18,7 +18,7 @@ class Solution:
         
             if a <= maxY:
                 maxY = max([maxY,a,b])
-            
+                
             else:
                 result.append([minX,maxY])
                 minX = a
