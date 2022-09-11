@@ -13,8 +13,8 @@ class Solution:
         minX =intervals[0][0]
         maxY =intervals[0][1]
         
-        for i in  range(1,len(intervals) ):
-            a,b = intervals[i][0],intervals[i][1]
+        for a,b in intervals[1:]:
+            # a,b = intervals[i][0],intervals[i][1]
         
             if a <= maxY:
                 maxY = max([maxY,a,b])
