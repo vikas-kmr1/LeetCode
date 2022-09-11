@@ -6,10 +6,10 @@ class Solution:
             return intervals
         
     
-        result  = []
+        
         
         intervals.sort()
-        
+        result  = []
         minX =intervals[0][0]
         maxY =intervals[0][1]
         
