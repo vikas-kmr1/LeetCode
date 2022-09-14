@@ -2,7 +2,6 @@ class Solution:
     def myAtoi(self, s: str) -> int:
         sign = 0
         result = 0
-        trimmed = 0
         
         s = s.strip()
          
