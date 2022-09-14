@@ -4,11 +4,7 @@ class Solution:
         result = 0
         trimmed = 0
         
-        for ch in s:
-            if ch == ' ' and trimmed == 0:
-                s = s[1:]
-            else:
-                trimmed = 1
+        s = s.strip()
          
         if s == "":
             return result
