@@ -21,7 +21,7 @@ class Solution:
     def isSameTree(self, p, q):
         stack = [(p, q)]
         while stack:
-            (p, q) = stack.pop()
+            (p, q) = stack.pop(0)
             if p and q and p.val == q.val:
                 stack.extend([
                     (p.left,  q.left),
