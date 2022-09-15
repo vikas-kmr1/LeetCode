@@ -14,7 +14,10 @@ class Solution:
         slow = tempNode
         
         for i in range(n):
-            fast = fast.next
+            if fast.next:
+                fast = fast.next
+            else:return head
+        
         
         while fast.next:
             slow = slow.next
