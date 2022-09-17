@@ -2,7 +2,7 @@ class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
         def gridTravellor(m,n,memo={}):
             key = m,n
-            if key in memo:
+            if memo.get(key):
                 return memo[key]
             if m==1 and n==1:
                 return 1
