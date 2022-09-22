@@ -2,7 +2,7 @@ class Solution:
     
     
     def reverseWords(self, s: str) -> str:
-# 1st approach: 63.4% faster
+# 1st approach: 79.4% faster
         st=[]
         st.extend(map(str,s.split(" ")))
         s_new=""
