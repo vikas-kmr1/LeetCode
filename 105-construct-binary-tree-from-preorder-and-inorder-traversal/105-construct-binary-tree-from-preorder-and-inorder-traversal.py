@@ -4,7 +4,12 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+
+
+#T.C : O(N)
+#S.C : O(N)
 class Solution:
+    
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
         
         if not preorder or not inorder: 
