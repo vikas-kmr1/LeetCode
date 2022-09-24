@@ -12,7 +12,7 @@ class Solution:
         
         for i in range(len(s)):
             #odd len palindrome
-            res =self.expandCenter(s,i,i)
+            self.expandCenter(s,i,i)
 
             #even len palindrome
             self.expandCenter(s,i,i+1)
