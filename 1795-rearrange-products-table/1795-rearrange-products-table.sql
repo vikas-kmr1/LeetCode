@@ -1,9 +1,25 @@
 # Write your MySQL query statement below
-select product_id, 'store1' as store, store1 as price 
-from products where store1 is not null
-union
-select product_id, 'store2' as store, store2 as price 
-from products where store2 is not null
-union 
-select product_id, 'store3' as store, store3 as price 
-from products where store3 is not null;
+SELECT
+    PRODUCT_ID,"store1" AS STORE,STORE1 AS PRICE
+FROM 
+    PRODUCTS
+WHERE
+    STORE1 IS NOT NULL
+    
+                        UNION
+
+SELECT
+    PRODUCT_ID,"store2" AS STORE,STORE2 AS PRICE
+FROM 
+    PRODUCTS
+WHERE
+    STORE2 IS NOT NULL
+    
+                        UNION
+
+SELECT
+    PRODUCT_ID,"store3" AS STORE,STORE3 AS PRICE
+FROM 
+    PRODUCTS
+WHERE
+    STORE3 IS NOT NULL
