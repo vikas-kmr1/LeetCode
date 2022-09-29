@@ -10,5 +10,4 @@ WHERE
                 LEFT JOIN
             company c ON o.com_id = c.com_id
         WHERE
-            c.name = 'RED')
-;
+            c.name = 'RED');
