@@ -6,4 +6,6 @@ SELECT
               ELSE "Leaf"
           END AS TYPE
 FROM 
-    TREE T;
+    TREE T
+ORDER BY
+    T.ID ASC;
