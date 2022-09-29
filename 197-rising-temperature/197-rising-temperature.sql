@@ -1,5 +1,10 @@
 # Write your MySQL query statement below
-SELECT DISTINCT a.Id
-FROM Weather a,Weather b
-WHERE a.Temperature > b.Temperature
-AND DATEDIFF(a.Recorddate,b.Recorddate) = 1
+SELECT 
+    DISTINCT A.ID
+FROM 
+    WEATHER A, WEATHER B
+WHERE 
+    A.TEMPERATURE > B. TEMPERATURE
+                AND 
+    DATEDIFF(A.RECORDDATE,B.RECORDDATE)  = 1;
+
