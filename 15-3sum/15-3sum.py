@@ -4,6 +4,8 @@ class Solution:
         res = []
         nums.sort() # Takes O(nlogn ) ans space: o(n)
         
+        
+        # Takes O(n*N) 
         for i,n in enumerate(nums):
             
             if i > 0 and n == nums[i-1]:
@@ -26,7 +28,9 @@ class Solution:
                     while nums[l] == nums[l-1] and l < r:
                         l += 1
         return res
-                        
+        
+        #T.C: O(nlogN) + O(N*N) = O(N*N)
+        #S.C: O(N) sort takes n extra space
                 
                 
         
