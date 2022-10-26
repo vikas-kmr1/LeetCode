@@ -11,15 +11,15 @@ class Solution:
     def checkSubarraySum(self, nums: List[int], k: int) -> bool:
         
         remainder_map = {0 : 0}
-        s = 0
+        running_sum = 0
         for i,n in enumerate(nums):
             
-            s += n
+            running_sum += n
             
-            if s%k not in remainder_map:
-                remainder_map[s % k] = i + 1
+            if (running_sum % k) not in remainder_map:
+                remainder_map[running_sum % k] = i + 1
                 
-            elif remainder_map[s % k] < i:
+            elif remainder_map[running_sum % k] < i:
                 return True
             
         return False
