@@ -5,30 +5,18 @@
 #   - Worst Case: O(n^2)
 # Extra Space Complexity: O(1)
 class Solution:
-    def partition(self, nums: List[int], left: int, right: int) -> int:
-        pivot, fill = nums[right], left
-
-        for i in range(left, right):
-            if nums[i] <= pivot:
-                nums[fill], nums[i] = nums[i], nums[fill]
-                fill += 1
-
-        nums[fill], nums[right] = nums[right], nums[fill]
-
-        return fill
-
-    def findKthLargest(self, nums: List[int], k: int) -> int:
-        k = len(nums) - k
-        left, right = 0, len(nums) - 1
-
-        while left < right:
-            pivot = self.partition(nums, left, right)
-
-            if pivot < k:
-                left = pivot + 1
-            elif pivot > k:
-                right = pivot - 1
-            else:
-                break
-
-        return nums[k]
+    def findKthLargest(self, nums, k):
+        if not nums: return
+        pivot = random.choice(nums)
+        left =  [x for x in nums if x > pivot]
+        mid  =  [x for x in nums if x == pivot]
+        right = [x for x in nums if x < pivot]
+        
+        L, M = len(left), len(mid)
+        
+        if k <= L:
+            return self.findKthLargest(left, k)
+        elif k > L + M:
+            return self.findKthLargest(right, k - L - M)
+        else:
+            return mid[0]
