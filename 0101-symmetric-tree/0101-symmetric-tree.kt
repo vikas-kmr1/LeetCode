@@ -1,20 +1,28 @@
-# Definition for a binary tree node.
-# class TreeNode:
-#     def __init__(self, val=0, left=None, right=None):
-#         self.val = val
-#         self.left = left
-#         self.right = right
-class Solution:
-    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+/**
+ * Example:
+ * var ti = TreeNode(5)
+ * var v = ti.`val`
+ * Definition for a binary tree node.
+ * class TreeNode(var `val`: Int) {
+ *     var left: TreeNode? = null
+ *     var right: TreeNode? = null
+ * }
+ */
+class Solution {
+    fun isSymmetric(root: TreeNode?): Boolean {
         
-        def checkSymmetric(left,right)->bool:
-            if (not left) or (not right):
-                return left == right
-            
-            if left.val != right.val:
-                return False
-            
-            return checkSymmetric(left.left,right.right) and checkSymmetric(left.right,right.left)
-       
-        return not root or checkSymmetric(root.left,root.right) 
+        return (root == null || isSubtreeSymmetric(root.left, root.right)) 
+    }
+    
+    private fun isSubtreeSymmetric(left: TreeNode?, right: TreeNode?): Boolean {
+        if (left == null && right == null) {
+            return true
+        }
         
+        if (left?.`val` != right?.`val`) {
+            return false
+        }
+        
+        return isSubtreeSymmetric(left?.left, right?.right) && isSubtreeSymmetric(left?.right, right?.left)
+    }
+}
