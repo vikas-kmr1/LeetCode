@@ -13,7 +13,7 @@ class Solution:
                  "O" : 1,
                  "o" : 1,
                  "U" : 1,
-                 "u" : 1
+                 "u" : 1,
                  }
         
         for i in range(n//2):
