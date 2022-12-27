@@ -1,3 +1,5 @@
+#Time complexity: O(nlog(n))
+# Space : O(n)
 class Solution:
     def maximumBags(self, capacity: List[int], rocks: List[int], additionalRocks: int) -> int:
         # Sort bags by the remaining capacity.
@@ -17,3 +19,10 @@ class Solution:
         
         # Return `full_bags` after the iteration stops.
         return full_bags
+            
+            
+
+        return cnt
+                
+            
+            
