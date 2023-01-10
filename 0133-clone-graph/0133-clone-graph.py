@@ -5,6 +5,8 @@ class Node:
         self.val = val
         self.neighbors = neighbors if neighbors is not None else []
 """
+# Time: O(V + E) - for DFS
+# Space: O(V) - for the hashmap
 
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
