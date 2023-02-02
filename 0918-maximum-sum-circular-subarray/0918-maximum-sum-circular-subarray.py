@@ -1,10 +1,14 @@
 class Solution:
-    def maxSubarraySumCircular(self, A):
-        total, maxSum, curMax, minSum, curMin = 0, A[0], 0, A[0], 0
-        for a in A:
-            curMax = max(curMax + a, a)
-            maxSum = max(maxSum, curMax)
-            curMin = min(curMin + a, a)
-            minSum = min(minSum, curMin)
-            total += a
-        return max(maxSum, total - minSum) if maxSum > 0 else maxSum
+    def maxSubarraySumCircular(self, nums):
+        globMax, globMin = nums[0], nums[0]
+        curMax, curMin = 0, 0
+        total = 0
+        
+        for i, n in enumerate(nums):
+            curMax = max(curMax + n, n)
+            curMin = min(curMin + n, n)
+            total += n
+            globMax = max(curMax, globMax)
+            globMin = min(curMin, globMin)
+
+        return max(globMax, total - globMin) if globMax > 0 else globMax
