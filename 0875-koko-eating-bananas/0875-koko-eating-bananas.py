@@ -1,3 +1,4 @@
+#T.C : O(nlog(max(piles)))
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
         l, r = 1, max(piles)
@@ -14,4 +15,5 @@ class Solution:
                 r = k - 1
             else:
                 l = k + 1
+
         return res
