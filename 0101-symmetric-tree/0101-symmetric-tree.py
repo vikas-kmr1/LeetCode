@@ -15,6 +15,6 @@ class Solution:
                 return False
             
             return checkSymmetric(left.left,right.right) and checkSymmetric(left.right,right.left)
-       
+    
         return not root or checkSymmetric(root.left,root.right) 
         
