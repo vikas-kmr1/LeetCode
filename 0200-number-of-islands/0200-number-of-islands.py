@@ -11,7 +11,7 @@
 #             if (
 #                 r not in range(rows)
 #                 or c not in range(cols)
-#                 or grid[r][c] == "0"
+#                 or grid[r][c] == "0"1
 #                 or (r, c) in visit
 #             ):
 #                 return
@@ -30,7 +30,7 @@
 
 
 def dfs(grid, row ,column):
-    if row < 0 or column < 0 or row >= len(grid) or column >= len(grid[0]):
+    if row < 0 or column < 0 or row >= len(grid) or column >= len(grid[0] or grid[row][column] != '1'):
         return 
     
     if grid[row][column] == '1':
