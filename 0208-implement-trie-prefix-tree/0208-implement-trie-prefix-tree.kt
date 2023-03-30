@@ -11,7 +11,7 @@ val root:TrieNode = TrieNode()
         var curr  = this.root
         
         for(c in word){
-            if(!(c in curr.children)){
+            if(c !in curr.children){
                 curr.children.put(c,TrieNode())
             }
             curr = curr.children[c]!!
@@ -23,7 +23,7 @@ val root:TrieNode = TrieNode()
         var curr = this.root
         
         for(c in word){
-            if (!(c in curr.children)){
+            if (c !in curr.children){
                 return false
             }
             curr = curr.children[c]!!
@@ -36,7 +36,7 @@ val root:TrieNode = TrieNode()
         var curr = this.root
         
         for(c in prefix){
-            if (!(c in curr.children)){
+            if (c !in curr.children){
                 return false
             }
             curr = curr.children[c]!!
