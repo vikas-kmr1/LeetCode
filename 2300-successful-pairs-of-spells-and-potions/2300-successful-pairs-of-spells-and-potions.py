@@ -1,5 +1,8 @@
 class Solution:
     def successfulPairs(self, spells: List[int], potions: List[int], success: int) -> List[int]:
+        #T.C = O(mlogm + nlogm ) ,where n = len(spells) and m = len(potions)
+        #S.C = O(n)
+        
         pairs = [] 
         lookUp = {}
         potions.sort()
