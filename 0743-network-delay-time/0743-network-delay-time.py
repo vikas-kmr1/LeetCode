@@ -18,7 +18,7 @@ class Solution:
                 continue
             
             visited.add(source)
-            time = max(time,weightS)
+            time = weightS
             for target, weightT in edges[ source]:
                 if target not in visited:
                     heapq.heappush(minHeap , (weightT+weightS , target))
