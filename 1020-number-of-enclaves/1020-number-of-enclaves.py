@@ -14,7 +14,6 @@ class Solution:
                 if (grid[i][j] == 1) and ( i in [0 ,len(grid ) - 1 ] or j in [0 ,len(grid[0])  - 1]):
                     dfs(i,j)
                     
-        print(grid)
         
         ans = 0
         for i in range(len(grid)):
