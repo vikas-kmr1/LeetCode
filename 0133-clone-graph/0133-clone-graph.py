@@ -10,14 +10,14 @@ class Node:
 
 class Solution:
     def cloneGraph(self, node: 'Node') -> 'Node':
-        cloneMap =dict()
+        oldToNew =dict()
         
         def clone(node):
-            if node in cloneMap:
-                return cloneMap.get(node)
+            if node in oldToNew:
+                return oldToNew.get(node)
             
             cloneNode = Node(node.val)
-            cloneMap[node] = cloneNode
+            oldToNew[node] = cloneNode
             
             for neighbor in node.neighbors:
                 cloneNode.neighbors.append(clone(neighbor))
