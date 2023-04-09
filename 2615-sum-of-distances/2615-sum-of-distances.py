@@ -1,19 +1,20 @@
+from typing import List
+
 class Solution:
     def distance(self, nums: List[int]) -> List[int]:
-        num_indices = dict()
-        occ=dict()
-        for i, num in enumerate(nums):
-            if num not in num_indices:
-                num_indices[num] = i
-                occ[num]=1
-            else:
-                num_indices[num]=num_indices[num]+i
-                occ[num]=occ[num]+1
-        arr = [0] * len(nums)
-        n=len(nums)
-        for i in range(n):
-            arr[i] = num_indices[nums[i]] - occ[nums[i]]*i     
-            num_indices[nums[i]]=num_indices[nums[i]]-2*i
-            occ[nums[i]]=occ[nums[i]]-2
-            
-        return arr
+        sum_l = {}
+        sum_r = {}
+        cnt_l = {}
+        cnt_r = {}
+        res = [0] * len(nums)
+        
+        for i in range(len(nums)):
+            res[i] = cnt_l.get(nums[i], 0) * i - sum_l.get(nums[i], 0)
+            sum_l[nums[i]] = sum_l.get(nums[i], 0) + i
+            cnt_l[nums[i]] = cnt_l.get(nums[i], 0) + 1 
+        
+        for i in range(len(nums) - 1, -1, -1):
+            res[i] += sum_r.get(nums[i], 0) - cnt_r.get(nums[i], 0) * i
+            sum_r[nums[i]] = sum_r.get(nums[i], 0) + i
+            cnt_r[nums[i]] = cnt_r.get(nums[i], 0) + 1 
+        return res
