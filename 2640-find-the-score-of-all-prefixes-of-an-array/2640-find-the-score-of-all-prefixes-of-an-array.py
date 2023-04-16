@@ -16,11 +16,12 @@ class Solution:
         prevMax = 0 
         result = []
         runningSum = 0
-        for num in nums:
+        for i,num in enumerate(nums):
             prevMax = max(num,prevMax)
-            result.append(runningSum + num + prevMax)
+            nums[i] = runningSum + num + prevMax
+            #result.append(runningSum + num + prevMax)
             runningSum += prevMax + num
-        return result
+        return nums
         
         
         
