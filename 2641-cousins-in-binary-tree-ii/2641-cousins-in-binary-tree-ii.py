@@ -5,32 +5,34 @@
 #         self.left = left
 #         self.right = right
 from collections import deque
-
 class Solution:
     def replaceValueInTree(self,root):
         q = deque()
         q.append(root)
         root.val = 0
+        
         while q:
-            n, total = len(q), 0
-            buf = []
-            for i in range(n):
+            n ,childrenSum = len(q) , 0
+            parents = []
+            for _ in range(n):
                 node = q.popleft()
-                buf.append(node)
+                parents.append(node)
                 if node.left:
+                    childrenSum += node.left.val
                     q.append(node.left)
-                    total += node.left.val
                 if node.right:
+                    childrenSum += node.right.val
                     q.append(node.right)
-                    total += node.right.val
-            for node in buf:
-                t = total
-                if node.left:
-                    t -= node.left.val
-                if node.right:
-                    t -= node.right.val
-                if node.left:
-                    node.left.val = t
-                if node.right:
-                    node.right.val = t
+                    
+            for parent in parents:
+                s = childrenSum
+                if parent.left:
+                    s -= parent.left.val
+                if parent.right:
+                    s -= parent.right.val
+                if parent.left:
+                    parent.left.val = s
+                if parent.right:
+                    parent.right.val = s
         return root
+                    
