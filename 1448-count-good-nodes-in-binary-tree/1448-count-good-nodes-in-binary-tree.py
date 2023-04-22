@@ -10,15 +10,16 @@ class Solution:
             return 0
         
         def dfs(node, curMax):
+            nonlocal count 
             if not node:
                 return
             if node.val >= curMax:
-                count[0] += 1
+                count += 1
                 curMax = node.val
             dfs(node.left, curMax)
             dfs(node.right, curMax)
         
-        count = [0]
+        count = 0
         dfs(root, root.val)
         
-        return count[0]
+        return count
