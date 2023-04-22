@@ -7,11 +7,10 @@
 
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
-        res = []
+        
         if not root: return []
 
         def helper(root,ind):
-            nonlocal res
             if  len(res) < ind+1 :
                 res.append([root.val])
             elif len(res) >= ind+1:
@@ -19,7 +18,7 @@ class Solution:
             
             if root.left: helper(root.left,ind+1)
             if root.right: helper(root.right,ind+1)
-
+        res = []
         helper(root,0)
         return res
 
