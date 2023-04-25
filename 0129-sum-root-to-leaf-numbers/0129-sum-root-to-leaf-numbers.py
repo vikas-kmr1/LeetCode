@@ -8,9 +8,11 @@ class Solution:
     def sumNumbers(self, root: Optional[TreeNode],res = 0) -> int:
         if not root:
             return 0
+        
+        res = res * 10 + root.val
         if not root.left and not root.right:
-            return (res*10) + root.val
-
-        return self.sumNumbers(root.left, res=(res*10) + root.val ) + self.sumNumbers(root.right, res= (res*10) + root.val)
+            return res 
+        
+        return  self.sumNumbers(root.left , res) + self.sumNumbers(root.right, res)
         
         
