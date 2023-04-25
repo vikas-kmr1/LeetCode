@@ -15,13 +15,13 @@ class Solution:
 
             for i in range(qLen):
                 node = q.popleft()
-                if node:
-                    leftSide = node
-                    
+        
+                leftSide = node
+                if node.right:    
                     q.append(node.right)
-                    q.append(node.left)
-            if leftSide:
-                res.append(leftSide.val) 
+                if node.left:
+                    q.append(node.left)        
+            res.append(leftSide.val) 
         return res[-1]
         
         
