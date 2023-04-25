@@ -16,7 +16,7 @@ class Solution:
             
             visited.add(s)
             if s == end:
-                return abs(ps)
+                return ps * -1
                     
             for t,pt in adjList[s]:
                 if t not in visited:
