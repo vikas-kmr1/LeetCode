@@ -1,13 +1,12 @@
 class Solution:
     def addDigits(self, num: int) -> int:
-        while num >= 10:
-            n = num
-            newNum = 0
-            while n:
-                newNum += n%10
-                n = n//10
+        digital_root = 0
+        while num > 0:
+            digital_root += num % 10
+            num = num // 10
+            
+            if num == 0 and digital_root > 9:
+                num = digital_root
+                digital_root = 0
                 
-            num = newNum
-        return num
-                
-                
+        return digital_root
