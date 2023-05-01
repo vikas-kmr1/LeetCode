@@ -1,9 +1,10 @@
 class Solution:
     def average(self, salary: List[int]) -> float:
-       
-        salary.remove(min(salary))
-        salary.remove(max(salary))
-        print(salary)
+        mxS, mnS = 0 ,inf
+        agv = 0 
+        for n in salary:
+            agv += n
+            mxS = max(mxS,n)
+            mnS = min(mnS,n)
         
-        return sum(salary)/len(salary)
-        
+        return ( agv - (mxS + mnS) ) / ( len(salary) - 2 )
