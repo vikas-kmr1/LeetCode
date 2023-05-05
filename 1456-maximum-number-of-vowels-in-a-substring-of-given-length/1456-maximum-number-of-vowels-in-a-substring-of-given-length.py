@@ -6,7 +6,8 @@ class Solution:
         i = 0
         cnt = 0
         a = ""
-        vowels = set(['a','e','i','o','u'])
+        vowels = {'a','e','i','o','u'}
+        
         while i < len(s):
             a += s[i]
             
