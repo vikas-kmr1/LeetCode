@@ -6,26 +6,29 @@ class FrequencyTracker:
         self.freq = defaultdict(set)
         
     def add(self, number: int) -> None:
-        n = self.count[number] 
-        
-        if number in self.freq[ n ]:
+        prevCount = self.count[number] 
+        # delete number if it is already present in the set at its current freq
+        if number in self.freq[ prevCount ]:
             self.freq[self.count[number]].remove(number)
-            
+        
+        #increment count or ocurence of number
         self.count[number] += 1
-        n += 1 
-        self.freq[n].add(number)
+        newCount = prevCount + 1 
+        #add number in the set at newCount
+        self.freq[newCount].add(number)
         
     def deleteOne(self, number: int) -> None:
+        # delete number if it is already present in the set at its current freq
         if number in self.freq[ self.count[number] ]:
             self.freq[self.count[number]].remove(number)
         
-        if self.count[number]:
+        if self.count[number]: # if number is alredy present, decrement its count by 1
             self.count[number] -= 1
-            if self.count[number] == 0:
+            if self.count[number] == 0: # if its become remove from count dict 
                 del self.count[number]
-            else:
-                n = self.count[number]
-                self.freq[n].add(number) 
+            else: # otherwise add the number in the set at newCount
+                newCount = self.count[number]
+                self.freq[newCount].add(number) 
     
     def hasFrequency(self, frequency: int) -> bool:
         
