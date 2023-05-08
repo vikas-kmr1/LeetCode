@@ -31,13 +31,6 @@ class FrequencyTracker:
                 self.freq[newCount].add(number) 
     
     def hasFrequency(self, frequency: int) -> bool:
+        # return true if set is exist(i.e length > 0) at frequency, otherwise false 
+        return self.freq[frequency]
         
-        return self.freq[frequency] 
-        
-
-
-# Your FrequencyTracker object will be instantiated and called as such:
-# obj = FrequencyTracker()
-# obj.add(number)
-# obj.deleteOne(number)
-# param_3 = obj.hasFrequency(frequency)
