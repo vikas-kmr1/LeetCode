@@ -6,17 +6,15 @@ class FrequencyTracker:
         self.freq = defaultdict(set)
         
     def add(self, number: int) -> None:
-        if number in self.freq[ self.count[number]]:
+        n = self.count[number] 
+        
+        if number in self.freq[ n ]:
             self.freq[self.count[number]].remove(number)
             
         self.count[number] += 1
-        
-        n = self.count[number] 
-        
+        n += 1 
         self.freq[n].add(number)
         
-          
-
     def deleteOne(self, number: int) -> None:
         if number in self.freq[ self.count[number] ]:
             self.freq[self.count[number]].remove(number)
