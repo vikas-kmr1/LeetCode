@@ -11,8 +11,10 @@ class MyLinkedList:
         self.right = ListNode(0)
         self.left.next = self.right
         self.right.prev = self.left
+        self.size = 0
 
     def get(self, index: int) -> int:
+        if index > self.size:return -1
         cur = self.left.next
         while cur and index > 0:
             cur = cur.next
@@ -27,12 +29,15 @@ class MyLinkedList:
         node.next, node.prev = next, prev
         next.prev = node
         prev.next = node
+        self.size += 1 
 
     def addAtTail(self, val: int) -> None:
         node, prev, next = ListNode(val), self.right.prev, self.right
         node.next, node.prev = next, prev
         next.prev = node
         prev.next = node
+        
+        self.size += 1
 
     def addAtIndex(self, index: int, val: int) -> None:
         next = self.left.next
@@ -45,9 +50,10 @@ class MyLinkedList:
             node.next, node.prev = next, prev
             next.prev = node
             prev.next = node
-
+            self.size += 1
 
     def deleteAtIndex(self, index: int) -> None:
+        if index > self.size:return -1
         node = self.left.next
         while node and index > 0:
             node = node.next
@@ -56,5 +62,6 @@ class MyLinkedList:
         if node and node != self.right and index == 0:
             node.prev.next = node.next
             node.next.prev = node.prev
+            self.size -= 1
 
 
