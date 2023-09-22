@@ -3,28 +3,36 @@
 
 class Solution:
     def find(self, arr, n, x):
-        s,e = self.binarySearch(arr,True,x), self.binarySearch(arr,False,x)    
+        s,e = self.binarySearch(False,arr,x), self.binarySearch(True,arr,x)    
         return [s,e]
         # code here
     
-    def binarySearch(self,arr,isFirst,k):
-        start, end  = 0, len(arr) - 1 
-        lastFound = -1
-        while start <= end:
-            mid = start + (end - start) // 2
-            if  arr[mid]  >  k:
-                end = mid - 1
-            elif arr[mid] < k:
-                start = mid + 1
-            else:
-                lastFound = mid
+    def binarySearch(self,firstFound,nums,target) -> int:
+        a = -1
+        
+        low = 0
+        high = len(nums) - 1
+        
+        while low <= high:
+            mid = low + (high-low)//2
+            if nums[mid] == target:
+                a = mid
                 
-                if isFirst:
-                    end = mid - 1
+                if firstFound:
+                    low = mid + 1
+                
                 else:
-                    start = mid + 1
+                    high = mid - 1
+                
             
-        return lastFound
+            elif nums[mid] > target:
+                high = mid -1
+            
+            else:
+                low = mid + 1
+        
+        return a
+        
     
     
     
