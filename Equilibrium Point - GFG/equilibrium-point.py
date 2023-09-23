@@ -10,12 +10,12 @@ class Solution:
         totalSum = sum(A)
         currSum = 0
         for i in range(N):
-            totalSum -= A[i]
+            currSum += A[i]
             
             if currSum == totalSum:
                 return i + 1
+            totalSum -= A[i]
             
-            currSum += A[i]
             
         return  -1
             
