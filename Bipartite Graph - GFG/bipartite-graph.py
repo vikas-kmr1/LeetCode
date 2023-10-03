@@ -2,39 +2,27 @@ from collections import deque
 
 class Solution:
     def isBipartite(self, V,graph):
-            
-        n, colored = len(graph), {}
-        for i in range(n):
-            if i not in colored and graph[i]:
-                colored[i] = 1
-                q = deque([i])
-                while q:
-                    cur = q.popleft()
-                    for nb in graph[cur]:
-                        if nb not in colored:
-                            colored[nb] = -colored[cur]
-                            q.append(nb)
-                        elif colored[nb] == colored[cur]:
-                            return False
+        color = {}
+        def dfs(pos):
+            for i in graph[pos]:
+                if i in color:
+                    if color[i] == color[pos]:
+                        return False
+                else:
+                    color[i] = 1 - color[pos]
+                    if not dfs(i):
+                        return False
+            return True
+        for i in range(len(graph)):
+            if i not in color:
+                color[i] = 0
+                if not dfs(i):
+                    return False
         return True
-        # color = {}
-        # def dfs(pos):
-        #     for i in graph[pos]:
-        #         if i in color:
-        #             if color[i] == color[pos]:
-        #                 return False
-        #         else:
-        #             color[i] = 1 - color[pos]
-        #             if not dfs(i):
-        #                 return False
-        #     return True
-        # for i in range(len(graph)):
-        #     if i not in color:
-        #         color[i] = 0
-        #         if not dfs(i):
-        #             return False
-        # return True
-		#code here
+        #code here
+
+
+
 
 
 #{ 
